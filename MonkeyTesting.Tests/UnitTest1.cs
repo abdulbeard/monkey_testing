@@ -9,7 +9,7 @@ namespace MonkeyTesting.Tests
         [MonkeyTest(typeof(UnitTest1), nameof(Test1))]
         public void Test1(int a, int b, int c)
         {
-
+            var pertumationResult = new Permutations().Permute<int>(4, new int[] { 0, 1, 2, 3 });
         }
 
         [Theory]
