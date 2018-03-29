@@ -1,7 +1,8 @@
 using System;
+using CuriousGeorge.xunit;
 using Xunit;
 
-namespace MonkeyTesting.Tests
+namespace CuriousGeorge.Tests.Xunit
 {
     public class UnitTest1
     {
@@ -9,7 +10,7 @@ namespace MonkeyTesting.Tests
         [MonkeyTest(typeof(UnitTest1), nameof(Test1))]
         public void Test1(int a, int b, int c)
         {
-            var pertumationResult = new Permutations().Permute<int>(4, new int[] { 0, 1, 2, 3 });
+            //var pertumationResult = Permutations.HeapsAlgorithm(4, new int[] { 0, 1, 2, 3 });
         }
 
         [Theory]
@@ -29,6 +30,13 @@ namespace MonkeyTesting.Tests
         [Theory]
         [MonkeyTest(typeof(UnitTest1), nameof(Test4))]
         public void Test4(Guid a, float b, Yolo c)
+        {
+
+        }
+
+        [Theory]
+        [MonkeyTest(typeof(UnitTest1), nameof(Test5), true)]
+        public void Test5(Yolo c)
         {
 
         }
