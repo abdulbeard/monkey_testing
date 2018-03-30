@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CuriousGeorge.Tests.Mstest
@@ -6,8 +7,15 @@ namespace CuriousGeorge.Tests.Mstest
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void IAmASuperDuperTest()
         {
+        }
+
+        [DataTestMethod]
+        [mstest.DynamicData(typeof(UnitTest1), nameof(AnotherIAmASuperDuperTest), true)]
+        public void AnotherIAmASuperDuperTest(int a, int b, int c)
+        {
+            Console.WriteLine($"{a}-{b}-{c}");
         }
     }
 }

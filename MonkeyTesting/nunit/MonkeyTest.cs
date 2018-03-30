@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using AutoFixture;
 
@@ -14,7 +15,8 @@ namespace CuriousGeorge.nunit
                 var methodInfo = classType.GetMethod(methodName,
                     BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
                 var fixture = new Fixture {RepeatCount = 3};
-                return MonkeyTestUtils.GetData(methodInfo, allPossibleCombinations, fixture);
+                var methodArgumentTypes = methodInfo.GetParameters().Select(x => x.ParameterType).ToList();
+                return MonkeyTestUtils.GetData(methodArgumentTypes, allPossibleCombinations, fixture);
             }
             catch (Exception ex)
             {

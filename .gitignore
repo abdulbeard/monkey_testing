@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MonkeyTesting.Tests.Xunit/obj
+/MonkeyTesting.Tests.Xunit/bin/Debug/netcoreapp2.0
+/MonkeyTesting.Tests.NUnit/obj
+/MonkeyTesting.Tests.NUnit/bin/Debug/netcoreapp2.0
+/MonkeyTesting.Tests.Mstest/obj
+/MonkeyTesting.Tests.Mstest/bin/Debug/netcoreapp2.0
+/MonkeyTesting/obj
+/MonkeyTesting/bin/Debug/netstandard2.0
+/.vs/MonkeyTesting/v15/Server/sqlite3

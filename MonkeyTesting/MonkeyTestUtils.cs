@@ -36,9 +36,9 @@ namespace CuriousGeorge
             return Permutations.AbdulsAlgorithm(collectionOfCollectionOfVariations);
         }
 
-        public static IEnumerable<object[]> GetData(MethodInfo methodInfo, bool allPossibleCombinations, Fixture fixture)
+        public static IEnumerable<object[]> GetData(List<Type> methodArgumentTypes, bool allPossibleCombinations, Fixture fixture)
         {
-            var methodArgumentTypes = methodInfo.GetParameters().Select(x => x.ParameterType).ToList();
+            //var methodArgumentTypes = methodInfo.GetParameters().Select(x => x.ParameterType).ToList();
             if (allPossibleCombinations)
             {
                 return GetAllPossibleCombinations(methodArgumentTypes, fixture);

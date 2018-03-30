@@ -1,4 +1,5 @@
 using System;
+using CuriousGeorge.nunit;
 using CuriousGeorge.xunit;
 using Xunit;
 
@@ -40,6 +41,22 @@ namespace CuriousGeorge.Tests.Xunit
         {
 
         }
+
+        [Theory]
+        //[InlineData(new object[]{null, 1})]
+        [MonkeyTest(typeof(UnitTest1), nameof(Test6), true)]
+        //[ClassData(typeof(TheoryDataMonkeyTest<TestingType, int>))]
+        public void Test6(PocoWrapper<TestingType> a, int c)
+        {
+
+        }
+    }
+
+    public class TestingType
+    {
+        public int count { get; set; }
+        public string Yolo { get; set; }
+        public Guid Id { get; set; }
     }
 
     public enum Yolo

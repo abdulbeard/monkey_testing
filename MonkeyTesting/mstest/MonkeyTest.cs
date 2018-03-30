@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using AutoFixture;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CuriousGeorge.xunit
+namespace CuriousGeorge.mstest
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class MonkeyTest: ClassDataAttribute
+    public class DynamicDataAttribute: Attribute, ITestDataSource
     {
         private readonly MethodInfo _methodInfo;
         private readonly bool _allPossibleCombinations;
         private readonly Fixture _fixture;
-        public MonkeyTest(Type classType, string methodName, bool allPossibleCombinations = false): base(classType)
+        public DynamicDataAttribute(Type classType, string methodName, bool allPossibleCombinations = false)
         {
             try
             {
@@ -33,10 +33,15 @@ namespace CuriousGeorge.xunit
             }
         }
 
-        public override IEnumerable<object[]> GetData(MethodInfo testMethod)
+        public IEnumerable<object[]> GetData(MethodInfo testMethod)
         {
             var methodArgumentTypes = testMethod.GetParameters().Select(x => x.ParameterType).ToList();
             return MonkeyTestUtils.GetData(methodArgumentTypes, _allPossibleCombinations, _fixture);
+        }
+
+        public string GetDisplayName(MethodInfo methodInfo, object[] data)
+        {
+            return $"{methodInfo.Name}({string.Join(",", data)})";
         }
     }
 }
