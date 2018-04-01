@@ -1,4 +1,5 @@
 using System;
+using CuriousGeorge.mstest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CuriousGeorge.Tests.Mstest
@@ -12,7 +13,7 @@ namespace CuriousGeorge.Tests.Mstest
         }
 
         [DataTestMethod]
-        [mstest.DynamicData(typeof(UnitTest1), nameof(AnotherIAmASuperDuperTest), true)]
+        [MonkeyTest(typeof(UnitTest1), nameof(AnotherIAmASuperDuperTest), true)]
         public void AnotherIAmASuperDuperTest(int a, int b, int c)
         {
             Console.WriteLine($"{a}-{b}-{c}");

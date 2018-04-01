@@ -8,12 +8,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CuriousGeorge.mstest
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class DynamicDataAttribute: Attribute, ITestDataSource
+    public class MonkeyTestAttribute: Attribute, ITestDataSource
     {
         private readonly MethodInfo _methodInfo;
         private readonly bool _allPossibleCombinations;
         private readonly Fixture _fixture;
-        public DynamicDataAttribute(Type classType, string methodName, bool allPossibleCombinations = false)
+        public MonkeyTestAttribute(Type classType, string methodName, bool allPossibleCombinations = false)
         {
             try
             {

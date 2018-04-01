@@ -11,3 +11,5 @@
 /MonkeyTesting/obj
 /MonkeyTesting/bin/Debug/netstandard2.0
 /.vs/MonkeyTesting/v15/Server/sqlite3
+/MonkeyTesting.Tests/obj
+/MonkeyTesting.Tests/bin/Debug/netcoreapp2.0
