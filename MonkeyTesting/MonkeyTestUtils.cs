@@ -89,7 +89,7 @@ namespace CuriousGeorge
             }
             else if (type.IsEnum)
             {
-                var variations = new DataTypeVariations()
+                var variations = new DataHolder()
                 {
                     MinValue = Enum.Parse(type, Enum.GetValues(type).Cast<int>().Min().ToString()),
                     MaxValue = Enum.Parse(type, Enum.GetValues(type).Cast<int>().Max().ToString()),
@@ -112,7 +112,7 @@ namespace CuriousGeorge
             return null;
         }
 
-        public static object GetValueFromDataTypeVariation(DataTypeVariations variations, ValueType valueType)
+        public static object GetValueFromDataTypeVariation(DataHolder variations, ValueType valueType)
         {
             switch (valueType)
             {

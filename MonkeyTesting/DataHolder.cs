@@ -1,6 +1,6 @@
 ﻿namespace CuriousGeorge
 {
-    public class DataTypeVariations
+    public class DataHolder
     {
         public object NullValue { get; set; }
         public object MinValue { get; set; }
