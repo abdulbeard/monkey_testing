@@ -13,6 +13,14 @@ namespace CuriousGeorge.xunit
         private readonly MethodInfo _methodInfo;
         private readonly bool _allPossibleCombinations;
         private readonly Fixture _fixture;
+        public MonkeyTest(Type classType, bool allPossibleCombinations = false) : base(classType)
+        {
+            _fixture = new Fixture
+            {
+                RepeatCount = 3
+            };
+            _allPossibleCombinations = allPossibleCombinations;
+        }
         public MonkeyTest(Type classType, string methodName, bool allPossibleCombinations = false): base(classType)
         {
             try

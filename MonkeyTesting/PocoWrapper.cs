@@ -7,6 +7,8 @@ namespace CuriousGeorge
     {
         public T Payload { get; private set; }
 
+        public PocoWrapper(){}
+
         public PocoWrapper(T payloadToSerialize)
         {
             Payload = payloadToSerialize;

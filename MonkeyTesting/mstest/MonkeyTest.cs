@@ -10,7 +10,7 @@ namespace CuriousGeorge.mstest
     [AttributeUsage(AttributeTargets.Method)]
     public class MonkeyTestAttribute: Attribute, ITestDataSource
     {
-        private readonly MethodInfo _methodInfo;
+        //private readonly MethodInfo _methodInfo;
         private readonly bool _allPossibleCombinations;
         private readonly Fixture _fixture;
         public MonkeyTestAttribute(Type classType, string methodName, bool allPossibleCombinations = false)
@@ -19,7 +19,7 @@ namespace CuriousGeorge.mstest
             {
                 var methodInfo = classType.GetMethod(methodName,
                     BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
-                _methodInfo = methodInfo;
+                //_methodInfo = methodInfo;
                 _allPossibleCombinations = allPossibleCombinations;
                 _fixture = new Fixture
                 {

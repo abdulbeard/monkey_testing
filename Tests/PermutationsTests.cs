@@ -61,7 +61,7 @@ namespace Tests
         [InlineData("3,1,2")]
         public void HeapsAlgorithmTest(string permuatation)
         {
-            var heapsResult = Permutations.HeapsAlgorithm(3, new string[] { "1", "2", "3" }).Select(x => string.Join(",", x)).ToList();
+            var heapsResult = Permutations.HeapsAlgorithm(3, new[] { "1", "2", "3" }).Select(x => string.Join(",", x)).ToList();
             Assert.Equal(6, heapsResult.Count);
             Assert.Contains(permuatation, heapsResult);
         }
