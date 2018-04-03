@@ -37,7 +37,6 @@ namespace CuriousGeorge
 
         public static IEnumerable<object[]> GetData(List<Type> methodArgumentTypes, bool allPossibleCombinations, Fixture fixture)
         {
-            //var methodArgumentTypes = methodInfo.GetParameters().Select(x => x.ParameterType).ToList();
             if (allPossibleCombinations)
             {
                 return GetAllPossibleCombinations(methodArgumentTypes, fixture);
