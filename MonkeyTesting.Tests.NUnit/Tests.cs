@@ -6,7 +6,7 @@ namespace CuriousGeorge.Tests.NUnit
     public class Tests
     {
         [Test]
-        [TestCaseSource(typeof(MonkeyTestCaseSource), "GetData", new object[] {typeof(Tests), nameof(Test1), true})]
+        [TestCaseSource(typeof(MonkeyTestCaseSource), nameof(MonkeyTestCaseSource.GetData), new object[] {typeof(Tests), nameof(Test1), true})]
         public void Test1(int a, int b, int c)
         {
             var result = new CodeToTest().FunctionToTest1(a, b, c);
