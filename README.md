@@ -1,7 +1,9 @@
 <center>
     <img src="https://raw.githubusercontent.com/abdulbeard/monkey_testing/master/Curious_George.png"/>
 </center>
-<h1 style="text-align: center">Monkey Testing<h1>
+<h1 style="text-align: center">Curious George<h1>
+
+Monkey Testing
 
 ## Table of Contents
 * [Introduction](#intro)
