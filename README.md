@@ -73,7 +73,7 @@ For NUnit:
         }
     }
 ```
-The `TestCaseSource` attribute is part of Nunit. By specifying the test case source as `MonkeyTestCaseSource`, and the function that returns the test dataset as `MonkeyTestCaseSource.GetData`, we are letting Nunit know where to go to find the datasets to run the test with. Furthermore, the `object[]` is the list of arguments that will be passed to `GetData`. In here, the method on which the `TestCaseSource` attribute is applied is being identified. CuriousGeorge uses [Reflection](#https://docs.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/reflection) to figure out what object types to create monkey tests datasets for. E.g. in this case, `Test1(int a, int b, int c)` is being identified by using `typeof(Tests)` (for the class) and `nameof(Test1)` (for the function).
+The `TestCaseSource` attribute is part of Nunit. By specifying the test case source as `MonkeyTestCaseSource`, and the function that returns the test dataset as `MonkeyTestCaseSource.GetData`, we are letting Nunit know where to go to find the datasets to run the test with. Furthermore, the `object[]` is the list of arguments that will be passed to `GetData`. In here, the method on which the `TestCaseSource` attribute is applied is being identified. CuriousGeorge uses [Reflection](#https://docs.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/reflection) to figure out what object types to create monkey tests datasets for. E.g. in this case, `Test1(int a, int b, int c)` is being identified by using `typeof(Tests)` (for the class) and `nameof(Test1)` (for the function), and CuriousGeorge will create a dataset with three ints each.
 
 ---
 <a id="xunitTests"></a>
@@ -117,7 +117,7 @@ The four basic variations of values for a given type are the following:
 * Min
 * Max
 
-For example, for the input argument type `int`, Null = `0`, Default = `default(int)`, Min = `int.MinValue` and Max = `int.MaxValue`. Now for a function like `FunctionToTest1(int a, int b, int c)` which takes in three ints, each of which can have one of 4 values - all possible combinations of values is a total of 64 combinations (4 x 4 x 4 = 64).
+For example, for the input argument type `int`, Null = `0`, Default = `default(int)`, Min = `int.MinValue` and Max = `int.MaxValue`. Now for a function like `FunctionToTest1(int a, int b, int c)` which takes in three ints, each of which can have one of 4 values (Null, Default, Min, Max) - all possible combinations of values is a total of 64 combinations (4 x 4 x 4 = 64).
 Since int is a [value type](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types), the Null and Default values for it are both `0`. 
 CuriousGeorge will make sure that the result set returned is distinct, and that any given result set is never repeated - which brings the total number of combinations down to 27 (3 x 3 x 3 = 27).
 `allPossibleCombinations` is the last argument for the monkey test dataset creation.

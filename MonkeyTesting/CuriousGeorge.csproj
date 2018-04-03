@@ -3,6 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Version>1.0.0-alpha</Version>
+    <Authors>AbdulBeard</Authors>
+    <Company>AbdulBeard</Company>
+    <Description>This package allows you to monkey-test your functions, by providing wide-ranging values for function arguments (Null, Default, Min, Max, Random). It lets you use all combinations of these values for your tests as well.</Description>
+    <PackageLicenseUrl>https://github.com/abdulbeard/monkey_testing/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>https://github.com/abdulbeard/monkey_testing/blob/master/LICENSE</Copyright>
+    <RepositoryUrl>https://github.com/abdulbeard/monkey_testing</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/abdulbeard/monkey_testing</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/abdulbeard/monkey_testing/master/Curious_George.png</PackageIconUrl>
+    <PackageReleaseNotes>Alpha version</PackageReleaseNotes>
+    <RepositoryType>Dependency</RepositoryType>
+    <PackageTags>monkeyTesting monkey testing abdulbeard xunit nunit mstest tests extensions curious george</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +21,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="NUnit" Version="3.10.1" />
-    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.3.1" />
   </ItemGroup>
 
 </Project>
