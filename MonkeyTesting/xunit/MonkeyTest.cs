@@ -10,7 +10,6 @@ namespace CuriousGeorge.xunit
     [AttributeUsage(AttributeTargets.Method)]
     public class MonkeyTest: ClassDataAttribute
     {
-        private readonly MethodInfo _methodInfo;
         private readonly bool _allPossibleCombinations;
         private readonly Fixture _fixture;
         public MonkeyTest(Type classType, bool allPossibleCombinations = false) : base(classType)
@@ -19,20 +18,23 @@ namespace CuriousGeorge.xunit
             {
                 RepeatCount = 3
             };
+            _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
+                .ForEach(b => _fixture.Behaviors.Remove(b));
+            _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
             _allPossibleCombinations = allPossibleCombinations;
         }
         public MonkeyTest(Type classType, string methodName, bool allPossibleCombinations = false): base(classType)
         {
             try
             {
-                var methodInfo = classType.GetMethod(methodName,
-                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
-                _methodInfo = methodInfo;
                 _allPossibleCombinations = allPossibleCombinations;
                 _fixture = new Fixture
                 {
                     RepeatCount = 3
                 };
+                _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
+                    .ForEach(b => _fixture.Behaviors.Remove(b));
+                _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
             }
             catch (Exception ex)
             {

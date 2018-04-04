@@ -16,13 +16,14 @@ namespace CuriousGeorge.mstest
         {
             try
             {
-                var methodInfo = classType.GetMethod(methodName,
-                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
                 _allPossibleCombinations = allPossibleCombinations;
                 _fixture = new Fixture
                 {
                     RepeatCount = 3
                 };
+                _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
+                    .ForEach(b => _fixture.Behaviors.Remove(b));
+                _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
             }
             catch (Exception ex)
             {

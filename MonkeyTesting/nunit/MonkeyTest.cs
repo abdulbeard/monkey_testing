@@ -15,6 +15,9 @@ namespace CuriousGeorge.nunit
                 var methodInfo = classType.GetMethod(methodName,
                     BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
                 var fixture = new Fixture {RepeatCount = 3};
+                fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
+                    .ForEach(b => fixture.Behaviors.Remove(b));
+                fixture.Behaviors.Add(new OmitOnRecursionBehavior());
                 var methodArgumentTypes = methodInfo.GetParameters().Select(x => x.ParameterType).ToList();
                 return MonkeyTestUtils.GetData(methodArgumentTypes, allPossibleCombinations, fixture);
             }

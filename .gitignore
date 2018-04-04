@@ -15,3 +15,9 @@
 /MonkeyTesting.Tests/bin/Debug/netcoreapp2.0
 /Tests/obj
 /Tests/bin/Debug/netcoreapp2.0
+/Tests/bin/Release/netcoreapp2.0
+/MonkeyTesting.Tests.Xunit/bin/Release/netcoreapp2.0
+/MonkeyTesting.Tests.NUnit/bin/Release/netcoreapp2.0
+/MonkeyTesting.Tests.Mstest/bin/Release/netcoreapp2.0
+/MonkeyTesting/bin
+/.vs/MonkeyTesting/v15

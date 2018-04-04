@@ -5,7 +5,7 @@ namespace CuriousGeorge
 {
     public class PocoWrapper<T> : IXunitSerializable
     {
-        public T Payload { get; private set; }
+        public T Payload { get; set; }
 
         public PocoWrapper(){}
 

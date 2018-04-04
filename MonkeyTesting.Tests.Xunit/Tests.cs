@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using CuriousGeorge.xunit;
 using Xunit;
 
@@ -60,7 +61,7 @@ namespace CuriousGeorge.Tests.Xunit
     {
         public int FunctionToTest6(TestClass metrics, int multiplier)
         {
-            return metrics?.count * multiplier ?? 0;
+            return metrics?.Count * multiplier ?? 0;
         }
 
         public int FunctionToTest5(DegreesOfCertainty doc)
@@ -82,7 +83,7 @@ namespace CuriousGeorge.Tests.Xunit
 
         public int FunctionToTest2(int quantity, float unitPrice, decimal extendedUnitPrice)
         {
-            return (int) ((int) quantity * unitPrice * (double) extendedUnitPrice);
+            return (int) (quantity * unitPrice * (double) extendedUnitPrice);
         }
 
         public int FunctionToTest1(int a, int b, int c)
@@ -91,9 +92,14 @@ namespace CuriousGeorge.Tests.Xunit
         }
     }
 
+    public class TestClassWithLists : TestClass
+    {
+        public List<TestClass> Children { get; set; }
+    }
+
     public class TestClass
     {
-        public int count { get; set; }
+        public int Count { get; set; }
         public string Yolo { get; set; }
         public Guid Id { get; set; }
     }
