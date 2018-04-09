@@ -1,7 +1,10 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/abdulbeard/monkey_testing/master/Curious_George.png"/>
+</p>
+<p align="center">
 <h1 style="text-align: center">Curious George<h1>
 </p>
+
 
 <p align="center">
 How to Monkey Test
