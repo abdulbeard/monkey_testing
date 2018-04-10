@@ -10,6 +10,22 @@
 How to Monkey Test
 </p>
 
+<p align="center">
+<img src="https://github.com/abdulbeard/monkey_testing/blob/master/BuildTools/Reports/badge_combined.svg" type="image/svg+xml"/>
+
+<a href="https://raw.githubusercontent.com/abdulbeard/monkey_testing/master/BuildTools/Reports/UnitTestsSummary.json" target="_blank">
+<img src="https://img.shields.io/badge/dynamic/json.svg?label=Tests&url=https%3A%2F%2Fraw.githubusercontent.com%2Fabdulbeard%2Fmonkey_testing%2Fmaster%2FBuildTools%2FReports%2FUnitTestsSummary.json&query=%24.TestsPercentage&colorB=58C52A&suffix=%20Passing" />
+</a>
+
+<a href="https://raw.githubusercontent.com/abdulbeard/aspnet-core-webapi-auth-middleware/master/BuildTools/Reports/UnitTestsSummary.json" target="_blank">
+<img src="https://img.shields.io/badge/Build-Passing-brightgreen.svg" />
+</a>
+
+<a href="https://www.nuget.org/packages/CuriousGeorge/1.0.0-alpha" target="_blank">
+<img src="https://img.shields.io/badge/Release-v1.0.0--alpha-blue.svg" />
+</a>
+</p>
+
 ## Table of Contents
 * [Introduction](#intro)
 * [Use Cases](#usecases)
