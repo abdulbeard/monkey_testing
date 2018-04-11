@@ -23,24 +23,16 @@ namespace CuriousGeorge.xunit
             _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
             _allPossibleCombinations = allPossibleCombinations;
         }
-        public MonkeyTest(Type classType, string methodName, bool allPossibleCombinations = false): base(classType)
+        public MonkeyTest(Type classType, string methodName, bool allPossibleCombinations = false) : base(classType)
         {
-            try
+            _allPossibleCombinations = allPossibleCombinations;
+            _fixture = new Fixture
             {
-                _allPossibleCombinations = allPossibleCombinations;
-                _fixture = new Fixture
-                {
-                    RepeatCount = 3
-                };
-                _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
-                    .ForEach(b => _fixture.Behaviors.Remove(b));
-                _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException($"Could not find method '{methodName}' on type {classType.FullName}",
-                    nameof(methodName), ex);
-            }
+                RepeatCount = 3
+            };
+            _fixture.Behaviors.OfType<ThrowingRecursionBehavior>().ToList()
+                .ForEach(b => _fixture.Behaviors.Remove(b));
+            _fixture.Behaviors.Add(new OmitOnRecursionBehavior());
         }
 
         public override IEnumerable<object[]> GetData(MethodInfo testMethod)

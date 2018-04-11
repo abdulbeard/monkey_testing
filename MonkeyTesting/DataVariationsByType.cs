@@ -14,7 +14,7 @@ namespace CuriousGeorge
 
         public static DataHolder GetDataTypeVariations(Type type)
         {
-            return MonkeyValuesByType.ContainsKey(type) ? MonkeyValuesByType[type] : null;
+            return TypeIsCovered(type) ? MonkeyValuesByType[type] : null;
         }
 
         private static readonly Dictionary<Type, DataHolder> MonkeyValuesByType = new Dictionary<Type, DataHolder>()

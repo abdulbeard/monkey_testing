@@ -9,6 +9,10 @@ namespace CuriousGeorge
 {
     public static class MonkeyTestUtils
     {
+        private static readonly string PocoWrapperGenericName =
+            $"{typeof(PocoWrapper<object>).GetGenericTypeDefinition().Name}";
+
+        private static readonly string PocoWrapperNamespace = typeof(PocoWrapper<object>).Namespace;
         public static IEnumerable<object[]> GetAllPossibleCombinations(List<Type> methodArgumentTypes, Fixture fixture)
         {
             var collectionOfCollectionOfVariations = new List<List<object>>();
@@ -41,29 +45,24 @@ namespace CuriousGeorge
 
         public static object MakeListsHaveNulls(object input)
         {
-            PropertyInfo[] properties;
-            var payloadProperty = input?.GetType().GetProperty(nameof(PocoWrapper<object>.Payload));
+            var inputType = input?.GetType();
+            var payloadProperty = inputType?.GetProperty(nameof(PocoWrapper<object>.Payload));
             var payloadPropertyType = payloadProperty?.PropertyType;
             var payloadValue = payloadProperty?.GetValue(input);
-            var inputType = input?.GetType();
-            if (inputType?.Namespace == "CuriousGeorge" && inputType.Name == $"{nameof(PocoWrapper<object>)}`1")
-            {
-                properties = payloadPropertyType?.GetProperties() ?? new PropertyInfo[0];
-            }
-            else
-            {
-                payloadValue = input;
-                properties = input?.GetType().GetProperties() ?? new PropertyInfo[0];
-            }
-            foreach (var property in properties)
+            var properties = inputType?.Namespace == PocoWrapperNamespace && inputType.Name == PocoWrapperGenericName
+                ? payloadPropertyType.GetProperties()
+                : inputType?.GetProperties();
+
+            foreach (var property in properties ?? new PropertyInfo[0])
             {
                 var propertyType = property.PropertyType;
                 if (propertyType.IsGenericType)
                 {
-                    var enumerableAddMethodInfo = propertyType.GetMethods().Single(method => method.Name == nameof(List<object>.Add));
                     var genericType = propertyType.GetGenericTypeDefinition();
                     if (genericType == typeof(List<>))
                     {
+                        var enumerableAddMethodInfo = propertyType.GetMethods()
+                            .Single(method => method.Name == nameof(List<object>.Add));
                         var value = property.GetValue(payloadValue);
                         enumerableAddMethodInfo.Invoke(value, new object[] { null });
                         enumerableAddMethodInfo.Invoke(value, new object[] { null });
@@ -78,21 +77,14 @@ namespace CuriousGeorge
 
         public static object MakeListsNull(object input)
         {
-            PropertyInfo[] properties;
-            var payloadProperty = input?.GetType().GetProperty(nameof(PocoWrapper<object>.Payload));
+            var inputType = input?.GetType();
+            var payloadProperty = inputType?.GetProperty(nameof(PocoWrapper<object>.Payload));
             var payloadPropertyType = payloadProperty?.PropertyType;
             var payloadValue = payloadProperty?.GetValue(input);
-            var inputType = input?.GetType();
-            if (inputType?.Namespace == "CuriousGeorge" && inputType.Name == $"{nameof(PocoWrapper<object>)}`1")
-            {
-                properties = payloadPropertyType?.GetProperties() ?? new PropertyInfo[0];
-            }
-            else
-            {
-                payloadValue = input;
-                properties = input?.GetType().GetProperties() ?? new PropertyInfo[0];
-            }
-            foreach (var property in properties)
+            var properties = inputType?.Namespace == PocoWrapperNamespace && inputType.Name == PocoWrapperGenericName
+                ? payloadPropertyType.GetProperties()
+                : inputType?.GetProperties();
+            foreach (var property in properties ?? new PropertyInfo[0])
             {
                 var propertyType = property.PropertyType;
                 if (propertyType.IsGenericType)

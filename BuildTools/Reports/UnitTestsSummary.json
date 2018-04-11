@@ -1,9 +1,9 @@
 {
-    "TestsPassed":  134,
+    "TestsPassed":  146,
     "TestsPassing":  true,
-    "TotalTests":  134,
-    "ExecutionTime":  "5.7536 Seconds",
-    "TestsPercentage":  "134/134",
+    "TotalTests":  146,
+    "ExecutionTime":  "8.2147 Seconds",
+    "TestsPercentage":  "146/146",
     "TestsSkipped":  0,
     "TestsFailed":  0
 }

@@ -327,13 +327,13 @@ var assemblies = [
     "classes": [
       { "name": "CuriousGeorge.Counter", "reportPath": "CuriousGeorge_Counter.htm", "coveredLines": 29, "uncoveredLines": 0, "coverableLines": 29, "totalLines": 53, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 6, "totalBranches": 6, "lineCoverageHistory": [], "branchCoverageHistory": [] },
       { "name": "CuriousGeorge.DataHolder", "reportPath": "CuriousGeorge_DataHolder.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 10, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "CuriousGeorge.DataVariationsByType", "reportPath": "CuriousGeorge_DataVariationsByType.htm", "coveredLines": 126, "uncoveredLines": 0, "coverableLines": 126, "totalLines": 145, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 1, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "CuriousGeorge.MonkeyTestUtils", "reportPath": "CuriousGeorge_MonkeyTestUtils.htm", "coveredLines": 114, "uncoveredLines": 41, "coverableLines": 155, "totalLines": 211, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 55, "totalBranches": 69, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "CuriousGeorge.mstest.MonkeyTestAttribute", "reportPath": "CuriousGeorge_MonkeyTestAttribute.htm", "coveredLines": 0, "uncoveredLines": 24, "coverableLines": 24, "totalLines": 46, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "CuriousGeorge.nunit.MonkeyTestCaseSource", "reportPath": "CuriousGeorge_MonkeyTestCaseSource.htm", "coveredLines": 0, "uncoveredLines": 15, "coverableLines": 15, "totalLines": 31, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "CuriousGeorge.DataVariationsByType", "reportPath": "CuriousGeorge_DataVariationsByType.htm", "coveredLines": 126, "uncoveredLines": 0, "coverableLines": 126, "totalLines": 145, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "CuriousGeorge.MonkeyTestUtils", "reportPath": "CuriousGeorge_MonkeyTestUtils.htm", "coveredLines": 149, "uncoveredLines": 0, "coverableLines": 149, "totalLines": 203, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 57, "totalBranches": 57, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "CuriousGeorge.mstest.MonkeyTestAttribute", "reportPath": "CuriousGeorge_MonkeyTestAttribute.htm", "coveredLines": 18, "uncoveredLines": 0, "coverableLines": 18, "totalLines": 38, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "CuriousGeorge.nunit.MonkeyTestCaseSource", "reportPath": "CuriousGeorge_MonkeyTestCaseSource.htm", "coveredLines": 15, "uncoveredLines": 0, "coverableLines": 15, "totalLines": 31, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
       { "name": "CuriousGeorge.Permutations", "reportPath": "CuriousGeorge_Permutations.htm", "coveredLines": 69, "uncoveredLines": 0, "coverableLines": 69, "totalLines": 91, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 14, "totalBranches": 14, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "CuriousGeorge.PocoWrapper`1", "reportPath": "CuriousGeorge_PocoWrapper_1.htm", "coveredLines": 2, "uncoveredLines": 11, "coverableLines": 13, "totalLines": 28, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "CuriousGeorge.xunit.MonkeyTest", "reportPath": "CuriousGeorge_MonkeyTest.htm", "coveredLines": 17, "uncoveredLines": 15, "coverableLines": 32, "totalLines": 52, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "CuriousGeorge.PocoWrapper`1", "reportPath": "CuriousGeorge_PocoWrapper_1.htm", "coveredLines": 13, "uncoveredLines": 0, "coverableLines": 13, "totalLines": 28, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "CuriousGeorge.xunit.MonkeyTest", "reportPath": "CuriousGeorge_MonkeyTest.htm", "coveredLines": 26, "uncoveredLines": 0, "coverableLines": 26, "totalLines": 44, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
     ]},
 ];
 
@@ -346,14 +346,14 @@ var riskHotspots = [
   {
     "assembly": "CuriousGeorge", "class": "CuriousGeorge.MonkeyTestUtils", "reportPath": "CuriousGeorge_MonkeyTestUtils.htm", "method": "MakeListsHaveNulls(...)",
     "metrics": [
-      { "value": 24, "exceeded": true },
-      { "value": 8192, "exceeded": true },
+      { "value": 21, "exceeded": true },
+      { "value": 1024, "exceeded": true },
     ]},
   {
     "assembly": "CuriousGeorge", "class": "CuriousGeorge.MonkeyTestUtils", "reportPath": "CuriousGeorge_MonkeyTestUtils.htm", "method": "MakeListsNull(...)",
     "metrics": [
-      { "value": 23, "exceeded": true },
-      { "value": 8192, "exceeded": true },
+      { "value": 20, "exceeded": true },
+      { "value": 1024, "exceeded": true },
     ]},
 ];
 
