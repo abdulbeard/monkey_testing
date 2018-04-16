@@ -79,11 +79,11 @@ namespace Tests
             var secondArgDistinct = testCases.Select(x => x.ElementAt(1)).Distinct().ToList();
             Assert.Equal(5, firstArgDistinct.Count);
             Assert.Equal(4, secondArgDistinct.Count);
-            Assert.Single(firstArgDistinctNotNull.Where(x => ((PocoWrapper<Tests.TestClass>)x).Payload.Children == null));
+            Assert.Single(firstArgDistinctNotNull.Where(x => ((PocoWrapper<TestClass>)x).Payload.Children == null));
             Assert.Single(firstArgDistinctNotNull.Where(x =>
-                ((PocoWrapper<Tests.TestClass>)x).Payload.Children?.Count == 0));
-            Assert.Single(firstArgDistinctNotNull.Where(x => ((PocoWrapper<Tests.TestClass>)x).Payload.Children?.Count == 3));
-            Assert.Single(firstArgDistinctNotNull.Where(x => ((PocoWrapper<Tests.TestClass>)x).Payload.Children?.Count == 6));
+                ((PocoWrapper<TestClass>)x).Payload.Children?.Count == 0));
+            Assert.Single(firstArgDistinctNotNull.Where(x => ((PocoWrapper<TestClass>)x).Payload.Children?.Count == 3));
+            Assert.Single(firstArgDistinctNotNull.Where(x => ((PocoWrapper<TestClass>)x).Payload.Children?.Count == 6));
             Assert.Equal(2,
                 firstArgDistinctNotNull.Count(x =>
                     ((PocoWrapper<TestClass>)x).Payload.Children?.Count(y => y != null) == 3));
@@ -91,7 +91,7 @@ namespace Tests
                 ((PocoWrapper<TestClass>)x).Payload.Children?.Count(y => y == null) == 3));
         }
 
-        public void GuineaPigFunction(PocoWrapper<Tests.TestClass> a, int b)
+        public void GuineaPigFunction(PocoWrapper<TestClass> a, int b)
         {
         }
     }

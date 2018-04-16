@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using AutoFixture;
 using CuriousGeorge;
 using Tests.TestingTypes;
@@ -56,7 +55,7 @@ namespace Tests
                 {
                     Payload = new List<string> { "a", "b", "c" }
                 })).Payload);
-            Assert.NotNull(MonkeyTestUtils.MakeListsHaveNulls(new CuriousGeorge.PocoWrapper<CuriousGeorge.Counter>()));
+            Assert.NotNull(MonkeyTestUtils.MakeListsHaveNulls(new CuriousGeorge.PocoWrapper<Counter>()));
             Assert.NotNull(MonkeyTestUtils.MakeListsHaveNulls(new CuriousGeorge.PocoWrapper<object>()));
             Assert.NotNull(MonkeyTestUtils.MakeListsHaveNulls(new CuriousGeorge.PocoWrapper<EmptyClass>()));
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using CuriousGeorge;
 using Newtonsoft.Json;
 using Xunit;
@@ -40,7 +39,6 @@ namespace Tests
             var wrapper = new PocoWrapper<TestClass>(testClass);
             var serializationInfo = new Xunitserializationinfo();
             wrapper.Serialize(serializationInfo);
-            var retrievedValue = serializationInfo.GetValue<string>("serializedValue");
             serializationInfo.AddValue("serializedValue", JsonConvert.SerializeObject(new TestClass() {Count = 465}));
             Assert.Equal(3, wrapper.Payload.Count);
             wrapper.Deserialize(serializationInfo);
